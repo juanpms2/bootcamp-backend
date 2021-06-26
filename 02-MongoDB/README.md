@@ -2,7 +2,7 @@
 
 Aquí tienes el enunciado del modulo 2, creat un repo en Github, y añade un readme.md incluyendo enunciado y consulya (lo que pone aquí Pega aquí tu consulta)
 
-####~Restaurar backup
+#### Restaurar backup
 
 Vamos a restaurar el set de datos de mongo atlas airbnb.
 
