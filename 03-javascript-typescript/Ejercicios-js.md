@@ -258,8 +258,23 @@ const collection = [
   },
 ];
 
-const normalize = (arr) => {
+const normalize = (collection) => createObject(collection);
 
+const createObject = (collection) => {
+	let newObject = {};
+	collection.map((item) => (newObject[item.id] = getPropertiesAndValues(item)));
+	return newObject;
+};
+
+const getPropertiesAndValues = (obj) => {
+	const { nationality, language, capital, national_sport, flag } = obj;
+	return {
+		nationality,
+		language,
+		capital,
+		national_sport,
+		flag,
+	};
 };
 
 const result = normalize(collection);
