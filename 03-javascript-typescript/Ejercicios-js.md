@@ -60,13 +60,12 @@ Extra: Añade un segundo argumento a la función para indicar el número de atri
 Si dicho argumento no es informado cada objeto tendrá todos los atributos.
 
 ```js
-const fromCSV = (csv, nAttrs) => {
+const fromCSV = (csv, nAttrs?) => {
 	const [keys, ...rows] = csv?.split("\n").map((row) => row.split(",")) ?? [];
-	const count = nAttrs;
-	const newKeys = nAttrs ? keys.slice(0, count) : keys;
+	const onlyThisAttrs = nAttrs ? keys.slice(0, nAttrs) : keys;
 	return rows?.map((row) =>
 		Object.fromEntries(
-			row.slice(0, count).map((value, i) => [newKeys[i], value])
+			row.slice(0, nAttrs).map((value, i) => [onlyThisAttrs[i], value])
 		)
 	);
 };
